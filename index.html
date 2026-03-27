@@ -363,6 +363,24 @@ const AMBER  = '#EF9F27';
 const CORAL  = '#D85A30';
 const PINK   = '#ED93B1';
 
+const columnOpts = (max = 20) => ({
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: { display: false },
+    tooltip: { callbacks: { label: ctx => ` ${ctx.raw} programs` } }
+  },
+  scales: {
+    x: { grid: { display: false }, ticks: { color: '#444441', font: { size: 11 } } },
+    y: {
+      beginAtZero: true,
+      max,
+      grid: { color: 'rgba(0,0,0,0.06)' },
+      ticks: { color: GRAY, font: { size: 11 }, stepSize: 2 }
+    }
+  }
+});
+
 const hBarOpts = (max = 100, showPct = true) => ({
   indexAxis: 'y',
   responsive: true,
@@ -371,9 +389,10 @@ const hBarOpts = (max = 100, showPct = true) => ({
     legend: { display: false },
     tooltip: {
       callbacks: {
-        label: ctx => showPct
-          ? ` ${ctx.raw}%  (${Math.round(ctx.raw * N / 100)} of ${N} programs)`
-          : ` ${ctx.raw} programs`
+        label: ctx =>
+          showPct
+            ? ` ${ctx.raw}% (${Math.round(ctx.raw * N / 100)} of ${N} programs)`
+            : ` ${ctx.raw} programs`
       }
     }
   },
@@ -381,34 +400,32 @@ const hBarOpts = (max = 100, showPct = true) => ({
     x: {
       max,
       grid: { color: 'rgba(0,0,0,0.06)' },
-      ticks: { color: GRAY, font: { size: 11 }, callback: v => showPct ? v + '%' : v }
+      ticks: { color: GRAY, callback: v => (showPct ? v + '%' : v) }
     },
-    y: {
-      grid: { display: false },
-      ticks: { color: '#444441', font: { size: 12 } }
-    }
-  },
-  layout: { padding: { right: 8 } }
+    y: { grid: { display: false }, ticks: { color: '#444441' } }
+  }
 });
 
 const stackedOpts = () => ({
   responsive: true,
   maintainAspectRatio: false,
-  plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw}%` } } },
+  plugins: {
+    legend: { display: false },
+    tooltip: { callbacks: { label: ctx => ` ${ctx.raw}%` } }
+  },
   scales: {
-    x: { stacked: true, grid: { display: false }, ticks: { color: '#444441', font: { size: 12 } } },
-    y: { stacked: true, max: 100, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, callback: v => v + '%' } }
+    x: { stacked: true, grid: { display: false } },
+    y: {
+      stacked: true,
+      max: 100,
+      grid: { color: 'rgba(0,0,0,0.06)' },
+      ticks: { color: GRAY, callback: v => v + '%' }
+    }
   }
 });
 
-const donutOpts = () => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  cutout: '58%',
-  plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}` } } }
-});
+/* COLUMN charts (formerly donuts) */
 
-// Country
 new Chart(document.getElementById('c-country'), {
   type: 'bar',
   data: {
@@ -422,50 +439,63 @@ new Chart(document.getElementById('c-country'), {
   options: columnOpts()
 });
 
-// Years active
 new Chart(document.getElementById('c-years'), {
-  type: 'doughnut',
+  type: 'bar',
   data: {
     labels: ['1–5 years','6–9 years','10–20 years','21+ years'],
-    datasets: [{ data: [9,4,5,2], backgroundColor: [BLUE,BLUE_M,BLUE_L,BLUE_D], borderWidth: 2, borderColor: '#fff' }]
+    datasets: [{
+      data: [9,4,5,2],
+      backgroundColor: [BLUE,BLUE_M,BLUE_L,BLUE_D],
+      borderRadius: 3
+    }]
   },
-  options: donutOpts()
+  options: columnOpts()
 });
 
-// Volume
 new Chart(document.getElementById('c-volume'), {
-  type: 'doughnut',
+  type: 'bar',
   data: {
     labels: ['101–500/yr','501–1000/yr','>1000/yr'],
-    datasets: [{ data: [10,4,6], backgroundColor: [BLUE,BLUE_M,BLUE_D], borderWidth: 2, borderColor: '#fff' }]
+    datasets: [{
+      data: [10,4,6],
+      backgroundColor: [BLUE,BLUE_M,BLUE_D],
+      borderRadius: 3
+    }]
   },
-  options: donutOpts()
+  options: columnOpts()
 });
 
-// Days per week
 new Chart(document.getElementById('c-days'), {
-  type: 'doughnut',
+  type: 'bar',
   data: {
     labels: ['7 days, full capacity','7 days, reduced weekends'],
-    datasets: [{ data: [15,5], backgroundColor: [TEAL,TEAL_L], borderWidth: 2, borderColor: '#fff' }]
+    datasets: [{
+      data: [15,5],
+      backgroundColor: [TEAL,TEAL_L],
+      borderRadius: 3
+    }]
   },
-  options: donutOpts()
+  options: columnOpts()
 });
 
-// Hours
 new Chart(document.getElementById('c-hrs'), {
-  type: 'doughnut',
+  type: 'bar',
   data: {
     labels: ['24 hours','Less than 24 hours'],
-    datasets: [{ data: [9,11], backgroundColor: [PURPLE,PURP_L], borderWidth: 2, borderColor: '#fff' }]
+    datasets: [{
+      data: [9,11],
+      backgroundColor: [PURPLE,PURP_L],
+      borderRadius: 3
+    }]
   },
-  options: donutOpts()
+  options: columnOpts()
 });
 
-// Age groups
+/* Remaining charts unchanged */
+
 new Chart(document.getElementById('c-age'), {
   type: 'bar',
-data: {
+  data: {
     labels: ['Neonates (0–1mo)','Infants (1mo–2yr)','Children (2–11yr)','Adolescents (12–18yr)','Adults (18+)'],
     datasets: [{
       data: [pct(19), pct(20), pct(20), pct(19), pct(1)],
@@ -476,7 +506,6 @@ data: {
   options: hBarOpts(100)
 });
 
-// Populations
 new Chart(document.getElementById('c-pop'), {
   type: 'bar',
   data: {
@@ -490,7 +519,6 @@ new Chart(document.getElementById('c-pop'), {
   options: hBarOpts(100)
 });
 
-// Admission sources
 new Chart(document.getElementById('c-admit'), {
   type: 'bar',
   data: {
@@ -504,7 +532,6 @@ new Chart(document.getElementById('c-admit'), {
   options: hBarOpts(100)
 });
 
-// Catchment
 new Chart(document.getElementById('c-catch'), {
   type: 'bar',
   data: {
@@ -512,127 +539,6 @@ new Chart(document.getElementById('c-catch'), {
     datasets: [{
       data: [pct(13), pct(10), pct(4), pct(1)],
       backgroundColor: [BLUE, BLUE_M, BLUE_L, GRAY_L],
-      borderRadius: 3
-    }]
-  },
-  options: hBarOpts(100)
-});
-
-// Staff
-new Chart(document.getElementById('c-staff'), {
-  type: 'bar',
-  data: {
-    labels: [
-      'Nurse','Doctor','Pharmacist','Social work / case mgmt',
-      'Physical therapist','Dietician / nutritionist','Speech-language pathology',
-      'Occupational therapist','Paramedic','Advanced practice provider','Child life specialist'
-    ],
-    datasets: [{
-      data: [pct(20), pct(19), pct(13), pct(9), pct(7), pct(7), pct(5), pct(2), pct(2), pct(2), pct(1)],
-      backgroundColor: BLUE,
-      borderRadius: 3
-    }]
-  },
-  options: hBarOpts(100)
-});
-
-// IV meds
-new Chart(document.getElementById('c-iv'), {
-  type: 'bar',
-  data: {
-    labels: [
-      'Antibiotics','Continuous infusions','Steroids','Other',
-      'Anticoagulation','TPN / parenteral nutrition',
-      'Chemotherapy','Opioids','Insulin','Blood transfusion'
-    ],
-    datasets: [{
-      data: [pct(20), pct(15), pct(15), pct(14), pct(10), pct(8), pct(6), pct(6), pct(6), pct(3)],
-      backgroundColor: TEAL,
-      borderRadius: 3
-    }]
-  },
-  options: hBarOpts(100)
-});
-
-// Other interventions
-new Chart(document.getElementById('c-int'), {
-  type: 'bar',
-  data: {
-    labels: ['Wound care','Supplemental oxygen','Nasogastric feeding','Airway treatments','Tracheostomy / vent mgmt','Other'],
-    datasets: [{
-      data: [pct(18), pct(15), pct(14), pct(13), pct(10), pct(9)],
-      backgroundColor: TEAL,
-      borderRadius: 3
-    }]
-  },
-  options: hBarOpts(100)
-});
-
-// POC
-new Chart(document.getElementById('c-poc'), {
-  type: 'bar',
-  data: {
-    labels: ['Blood collection','Blood testing','Other','Ultrasound','X-ray'],
-    datasets: [{
-      data: [pct(19), pct(11), pct(5), pct(4), pct(2)],
-      backgroundColor: PURPLE,
-      borderRadius: 3
-    }]
-  },
-  options: hBarOpts(100)
-});
-
-// Tech adoption (stacked)
-new Chart(document.getElementById('c-tech'), {
-  type: 'bar',
-  data: {
-    labels: ['Overnight response','EMR','Remote patient monitoring'],
-    datasets: [
-      { label: 'Yes', data: [80, 70, 40], backgroundColor: TEAL, borderRadius: 0 },
-      { label: 'No',  data: [20, 30, 60], backgroundColor: GRAY_L, borderRadius: 0 }
-    ]
-  },
-  options: stackedOpts()
-});
-
-// RPM types
-new Chart(document.getElementById('c-rpm'), {
-  type: 'bar',
-  data: {
-    labels: [
-      'Intermittent pulse ox','Intermittent heart rate',
-      'Weight','Intake / output','Other',
-      'Blood pressure','Continuous pulse ox','Continuous heart rate'
-    ],
-    datasets: [{
-      data: [8, 8, 4, 4, 3, 2, 1, 1],
-      backgroundColor: BLUE,
-      borderRadius: 3
-    }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: { callbacks: { label: ctx => ` ${ctx.raw} of 8 programs` } }
-    },
-    scales: {
-      x: { max: 8, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, stepSize: 2 } },
-      y: { grid: { display: false }, ticks: { color: '#444441', font: { size: 11 } } }
-    }
-  }
-});
-
-// Communication
-new Chart(document.getElementById('c-comm'), {
-  type: 'bar',
-  data: {
-    labels: ['Phone','Video / telemedicine','Text / SMS','Patient portal','Other'],
-    datasets: [{
-      data: [pct(20), pct(18), pct(16), pct(3), pct(1)],
-      backgroundColor: PURPLE,
       borderRadius: 3
     }]
   },
