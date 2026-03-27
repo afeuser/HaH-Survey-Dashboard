@@ -461,10 +461,11 @@ new Chart(document.getElementById('c-hrs'), {
 // Age groups
 new Chart(document.getElementById('c-age'), {
   type: 'bar',
-  data: {
-   labels: ['Neonates (0–1mo)','Infants (1mo–2yr)','Children (2–11yr)','Adolescents (12–18yr)','Adults (18+)'],
-   data: [pct(19), pct(20), pct(20), pct(19), pct(1)],
-   backgroundColor: [TEAL, TEAL, TEAL, TEAL, GRAY_L],
+data: {
+    labels: ['Neonates (0–1mo)','Infants (1mo–2yr)','Children (2–11yr)','Adolescents (12–18yr)','Adults (18+)'],
+    datasets: [{
+      data: [pct(19), pct(20), pct(20), pct(19), pct(1)],
+      backgroundColor: [TEAL, TEAL, TEAL, TEAL, GRAY_L],
       borderRadius: 3
     }]
   },
