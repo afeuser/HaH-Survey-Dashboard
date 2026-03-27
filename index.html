@@ -410,12 +410,16 @@ const donutOpts = () => ({
 
 // Country
 new Chart(document.getElementById('c-country'), {
-  type: 'doughnut',
+  type: 'bar',
   data: {
     labels: ['Australia','Spain','UK','Greece','France','Singapore','USA'],
-    datasets: [{ data: [7,6,3,1,1,1,1], backgroundColor: [BLUE,TEAL,PURPLE,AMBER,CORAL,PINK,BLUE_L], borderWidth: 2, borderColor: '#fff' }]
+    datasets: [{
+      data: [7,6,3,1,1,1,1],
+      backgroundColor: [BLUE,TEAL,PURPLE,AMBER,CORAL,PINK,BLUE_L],
+      borderRadius: 3
+    }]
   },
-  options: donutOpts()
+  options: columnOpts()
 });
 
 // Years active
