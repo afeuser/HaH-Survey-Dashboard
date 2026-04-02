@@ -39,34 +39,32 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 <div class="page">
   <div class="page-header">
     <h1>Pediatric Hospital at Home — International Survey</h1>
-    <p>20 programs across 7 countries &nbsp;·&nbsp; Equitable Healthcare Lab / Institute of Design &nbsp;·&nbsp; March 2026</p>
+    <p>25 programs across 7 countries &nbsp;·&nbsp; Equitable Healthcare Lab / Institute of Design &nbsp;·&nbsp; March 2026</p>
   </div>
-
-  <!-- Summary metrics -->
+ 
   <div class="metrics">
     <div class="metric">
       <div class="metric-label">Programs surveyed</div>
-      <div class="metric-value">20</div>
+      <div class="metric-value">25</div>
       <div class="metric-sub">7 countries</div>
     </div>
     <div class="metric">
       <div class="metric-label">Overnight response capacity</div>
-      <div class="metric-value">80%</div>
-      <div class="metric-sub">16 of 20 programs</div>
+      <div class="metric-value">68%</div>
+      <div class="metric-sub">17 of 25 programs</div>
     </div>
     <div class="metric">
       <div class="metric-label">Use an EMR</div>
-      <div class="metric-value">70%</div>
-      <div class="metric-sub">14 of 20 programs</div>
+      <div class="metric-value">76%</div>
+      <div class="metric-sub">19 of 25 programs</div>
     </div>
     <div class="metric">
       <div class="metric-label">Use remote monitoring</div>
-      <div class="metric-value">40%</div>
-      <div class="metric-sub">8 of 20 programs</div>
+      <div class="metric-value">44%</div>
+      <div class="metric-sub">11 of 25 programs</div>
     </div>
   </div>
-
-  <!-- Program characteristics -->
+ 
   <div class="section">
     <div class="section-label">Program characteristics</div>
     <div class="three-col">
@@ -87,8 +85,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
       </div>
     </div>
   </div>
-
-  <!-- Operations -->
+ 
   <div class="section">
     <div class="section-label">Operations</div>
     <div class="two-col">
@@ -104,8 +101,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
       </div>
     </div>
   </div>
-
-  <!-- Patients -->
+ 
   <div class="section">
     <div class="section-label">Patients</div>
     <div class="two-col">
@@ -121,60 +117,55 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
       </div>
     </div>
   </div>
-
-  <!-- Referral -->
+ 
   <div class="section">
     <div class="section-label">Referral sources</div>
     <div class="chart-card">
       <div class="chart-title">From what locations can patients be admitted?</div>
-      <div class="chart-sub">% of programs (select all that apply, n=20)</div>
+      <div class="chart-sub">% of programs (select all that apply, n=25)</div>
       <div class="chart-wrap" style="height:220px"><canvas id="c-admit"></canvas></div>
     </div>
   </div>
-
-  <!-- Catchment -->
+ 
   <div class="section">
     <div class="section-label">Catchment area</div>
     <div class="chart-card">
       <div class="chart-title">How is catchment area defined?</div>
-      <div class="chart-sub">% of programs (select all that apply, n=20)</div>
+      <div class="chart-sub">% of programs (select all that apply, n=25)</div>
       <div class="chart-wrap" style="height:160px"><canvas id="c-catch"></canvas></div>
     </div>
   </div>
-
-  <!-- Workforce -->
+ 
   <div class="section">
     <div class="section-label">Workforce</div>
     <div class="chart-card">
       <div class="chart-title">Personnel on team</div>
-      <div class="chart-sub">% of programs (select all that apply, n=20)</div>
+      <div class="chart-sub">% of programs (select all that apply, n=25)</div>
       <div class="chart-wrap" style="height:340px"><canvas id="c-staff"></canvas></div>
     </div>
   </div>
-
-  <!-- Clinical services -->
+ 
   <div class="section">
     <div class="section-label">Clinical services</div>
     <div class="two-col" style="margin-bottom:16px">
       <div class="chart-card">
         <div class="chart-title">IV &amp; subcutaneous medications</div>
-        <div class="chart-sub">% of programs (n=20)</div>
+        <div class="chart-sub">% of programs (n=25)</div>
         <div class="chart-wrap" style="height:320px"><canvas id="c-iv"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="chart-title">Other interventions</div>
-        <div class="chart-sub">% of programs (n=20)</div>
+        <div class="chart-sub">% of programs (n=25)</div>
         <div class="chart-wrap" style="height:320px"><canvas id="c-int"></canvas></div>
       </div>
     </div>
     <div class="chart-card">
       <div class="chart-title">Point-of-care diagnostics</div>
-      <div class="chart-sub">% of programs (select all that apply, n=20)</div>
+      <div class="chart-sub">% of programs (select all that apply, n=25)</div>
       <div class="chart-wrap" style="height:200px"><canvas id="c-poc"></canvas></div>
     </div>
   </div>
-
-  <!-- Technology -->
+ 
   <div class="section">
     <div class="section-label">Technology &amp; monitoring</div>
     <div class="two-col" style="margin-bottom:16px">
@@ -189,22 +180,22 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
       </div>
       <div class="chart-card">
         <div class="chart-title">RPM modalities used</div>
-        <div class="chart-sub">Among 8 programs using RPM — number of programs</div>
-        <div class="chart-wrap" style="height:220px"><canvas id="c-rpm"></canvas></div>
+        <div class="chart-sub">Among 11 programs using RPM — number of programs</div>
+        <div class="chart-wrap" style="height:280px"><canvas id="c-rpm"></canvas></div>
       </div>
     </div>
     <div class="chart-card">
       <div class="chart-title">Patient-provider communication modes</div>
-      <div class="chart-sub">% of programs (select all that apply, n=20)</div>
+      <div class="chart-sub">% of programs (select all that apply, n=25)</div>
       <div class="chart-wrap" style="height:200px"><canvas id="c-comm"></canvas></div>
     </div>
   </div>
 </div>
-
+ 
 <script>
-const N = 20;
+const N = 25;
 const pct = v => Math.round(v / N * 100);
-
+ 
 const BLUE   = '#378ADD';
 const BLUE_M = '#85B7EB';
 const BLUE_L = '#B5D4F4';
@@ -218,271 +209,139 @@ const GRAY_L = '#D3D1C7';
 const AMBER  = '#EF9F27';
 const CORAL  = '#D85A30';
 const PINK   = '#ED93B1';
-
-const vBarOpts = (yMax, showCount = false) => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      callbacks: {
-        label: ctx => showCount
-          ? `${ctx.raw} programs`
-          : `${ctx.raw}% (${Math.round(ctx.raw * N / 100)} of ${N} programs)`
-      }
-    }
-  },
+ 
+const vBarOpts = (yMax, showCount=false) => ({
+  responsive: true, maintainAspectRatio: false,
+  plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => showCount ? `${ctx.raw} programs` : `${ctx.raw}% (${Math.round(ctx.raw*N/100)} of ${N} programs)` } } },
   scales: {
-    x: {
-      grid: { display: false },
-      ticks: { color: '#444441', font: { size: 11 }, maxRotation: 30, autoSkip: false }
-    },
-    y: {
-      max: yMax,
-      grid: { color: 'rgba(0,0,0,0.06)' },
-      ticks: {
-        color: GRAY,
-        font: { size: 11 },
-        callback: v => showCount ? v : v + '%'
-      }
-    }
+    x: { grid: { display: false }, ticks: { color: '#444441', font: { size: 11 }, maxRotation: 30, autoSkip: false } },
+    y: { max: yMax, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, callback: v => showCount ? v : v+'%' } }
   },
   layout: { padding: { top: 8 } }
 });
-
-const hBarOpts = (max = 100, showPct = true) => ({
-  indexAxis: 'y',
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      callbacks: {
-        label: ctx => showPct
-          ? `${ctx.raw}% (${Math.round(ctx.raw * N / 100)} of ${N} programs)`
-          : `${ctx.raw} programs`
-      }
-    }
-  },
+ 
+const hBarOpts = (max=100, showPct=true) => ({
+  indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+  plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => showPct ? `${ctx.raw}% (${Math.round(ctx.raw*N/100)} of ${N} programs)` : `${ctx.raw} programs` } } },
   scales: {
-    x: {
-      max,
-      grid: { color: 'rgba(0,0,0,0.06)' },
-      ticks: { color: GRAY, font: { size: 11 }, callback: v => showPct ? v + '%' : v }
-    },
-    y: {
-      grid: { display: false },
-      ticks: { color: '#444441', font: { size: 12 } }
-    }
+    x: { max, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, callback: v => showPct ? v+'%' : v } },
+    y: { grid: { display: false }, ticks: { color: '#444441', font: { size: 12 } } }
   },
   layout: { padding: { right: 8 } }
 });
-
+ 
 const stackedOpts = () => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-    tooltip: { callbacks: { label: ctx => `${ctx.raw}%` } }
-  },
+  responsive: true, maintainAspectRatio: false,
+  plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.raw}%` } } },
   scales: {
     x: { stacked: true, grid: { display: false }, ticks: { color: '#444441', font: { size: 12 } } },
-    y: { stacked: true, max: 100, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, callback: v => v + '%' } }
+    y: { stacked: true, max: 100, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, callback: v => v+'%' } }
   }
 });
-
-// Country — vertical bar
+ 
 new Chart(document.getElementById('c-country'), {
   type: 'bar',
-  data: {
-    labels: ['Australia','Spain','UK','Greece','France','Singapore','USA'],
-    datasets: [{
-      data: [7, 6, 3, 1, 1, 1, 1],
-      backgroundColor: [BLUE, TEAL, PURPLE, AMBER, CORAL, PINK, BLUE_L],
-      borderRadius: 3
-    }]
-  },
+  data: { labels: ['Australia','UK','Spain','France','Greece','Singapore','USA'], datasets: [{ data: [7,7,6,2,1,1,1], backgroundColor: [BLUE,TEAL,PURPLE,CORAL,AMBER,PINK,BLUE_L], borderRadius: 3 }] },
   options: vBarOpts(10, true)
 });
-
-// Years active — vertical bar
+ 
 new Chart(document.getElementById('c-years'), {
   type: 'bar',
-  data: {
-    labels: ['1–5 yrs','6–9 yrs','10–20 yrs','21+ yrs'],
-    datasets: [{
-      data: [9, 4, 5, 2],
-      backgroundColor: [BLUE, BLUE_M, BLUE_L, BLUE_D],
-      borderRadius: 3
-    }]
-  },
-  options: vBarOpts(10, true)
+  data: { labels: ['1–5 yrs','6–9 yrs','10–20 yrs','21+ yrs'], datasets: [{ data: [12,6,5,2], backgroundColor: [BLUE,BLUE_M,BLUE_L,BLUE_D], borderRadius: 3 }] },
+  options: vBarOpts(14, true)
 });
-
-// Volume — vertical bar
+ 
 new Chart(document.getElementById('c-volume'), {
   type: 'bar',
-  data: {
-    labels: ['101–500/yr','501–1000/yr','>1000/yr'],
-    datasets: [{
-      data: [10, 4, 6],
-      backgroundColor: [BLUE, BLUE_M, BLUE_D],
-      borderRadius: 3
-    }]
-  },
-  options: vBarOpts(12, true)
+  data: { labels: ['101–500/yr','501–1000/yr','>1000/yr'], datasets: [{ data: [11,5,9], backgroundColor: [BLUE,BLUE_M,BLUE_D], borderRadius: 3 }] },
+  options: vBarOpts(14, true)
 });
-
-// Days per week — vertical bar
+ 
 new Chart(document.getElementById('c-days'), {
   type: 'bar',
-  data: {
-    labels: ['7 days, full capacity','7 days, reduced weekends'],
-    datasets: [{
-      data: [15, 5],
-      backgroundColor: [TEAL, TEAL_L],
-      borderRadius: 3
-    }]
-  },
-  options: vBarOpts(20, true)
+  data: { labels: ['7 days, full capacity','7 days, reduced weekends'], datasets: [{ data: [20,5], backgroundColor: [TEAL,TEAL_L], borderRadius: 3 }] },
+  options: vBarOpts(25, true)
 });
-
-// Hours — vertical bar
+ 
 new Chart(document.getElementById('c-hrs'), {
   type: 'bar',
-  data: {
-    labels: ['24 hours','Less than 24 hours'],
-    datasets: [{
-      data: [9, 11],
-      backgroundColor: [PURPLE, PURP_L],
-      borderRadius: 3
-    }]
-  },
-  options: vBarOpts(15, true)
+  data: { labels: ['24 hours','Less than 24 hours'], datasets: [{ data: [10,15], backgroundColor: [PURPLE,PURP_L], borderRadius: 3 }] },
+  options: vBarOpts(20, true)
 });
-
-// Age groups
+ 
 new Chart(document.getElementById('c-age'), {
   type: 'bar',
-  data: {
-    labels: ['Neonates (0–1mo)','Infants (1mo–2yr)','Children (2–11yr)','Adolescents (12–18yr)','Adults (18+)'],
-    datasets: [{ data: [pct(19), pct(20), pct(20), pct(19), pct(1)], backgroundColor: [TEAL, TEAL, TEAL, TEAL, GRAY_L], borderRadius: 3 }]
-  },
+  data: { labels: ['Neonates (0–1mo)','Infants (1mo–2yr)','Children (2–11yr)','Adolescents (12–18yr)','Adults (18+)'], datasets: [{ data: [pct(24),pct(25),pct(25),pct(23),pct(1)], backgroundColor: [TEAL,TEAL,TEAL,TEAL,GRAY_L], borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// Populations
+ 
 new Chart(document.getElementById('c-pop'), {
   type: 'bar',
-  data: {
-    labels: ['Urban','Suburban','Rural'],
-    datasets: [{ data: [pct(19), pct(15), pct(7)], backgroundColor: [BLUE, BLUE_M, BLUE_L], borderRadius: 3 }]
-  },
+  data: { labels: ['Urban','Suburban','Rural'], datasets: [{ data: [pct(24),pct(17),pct(9)], backgroundColor: [BLUE,BLUE_M,BLUE_L], borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// Admission sources
+ 
 new Chart(document.getElementById('c-admit'), {
   type: 'bar',
-  data: {
-    labels: ['Hospital inpatient ward','Emergency department','Outpatient / specialty clinic','Home (known patients)','Other'],
-    datasets: [{ data: [pct(20), pct(18), pct(15), pct(10), pct(8)], backgroundColor: BLUE, borderRadius: 3 }]
-  },
+  data: { labels: ['Hospital inpatient ward','Emergency department','Outpatient / specialty clinic','Home (known patients)','Other'], datasets: [{ data: [pct(25),pct(22),pct(17),pct(14),pct(10)], backgroundColor: BLUE, borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// Catchment
+ 
 new Chart(document.getElementById('c-catch'), {
   type: 'bar',
-  data: {
-    labels: ['By travel time','By distance','Other','No catchment area'],
-    datasets: [{ data: [pct(13), pct(10), pct(4), pct(1)], backgroundColor: [BLUE, BLUE_M, BLUE_L, GRAY_L], borderRadius: 3 }]
-  },
+  data: { labels: ['By travel time','By distance','Other','No catchment area'], datasets: [{ data: [pct(14),pct(11),pct(7),pct(1)], backgroundColor: [BLUE,BLUE_M,BLUE_L,GRAY_L], borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// Staff
+ 
 new Chart(document.getElementById('c-staff'), {
   type: 'bar',
-  data: {
-    labels: ['Nurse','Doctor','Pharmacist','Social work / case mgmt','Physical therapist','Dietician / nutritionist','Speech-language pathology','Occupational therapist','Paramedic','Advanced practice provider','Child life specialist'],
-    datasets: [{ data: [pct(20), pct(19), pct(13), pct(9), pct(7), pct(7), pct(5), pct(2), pct(2), pct(2), pct(1)], backgroundColor: BLUE, borderRadius: 3 }]
-  },
+  data: { labels: ['Nurse','Doctor','Pharmacist','Social work / case mgmt','Physical therapist','Dietician / nutritionist','Speech-language pathology','Paramedic','Advanced practice provider','Occupational therapist','Child life specialist'], datasets: [{ data: [pct(25),pct(23),pct(15),pct(9),pct(8),pct(8),pct(5),pct(3),pct(2),pct(2),pct(1)], backgroundColor: BLUE, borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// IV meds
+ 
 new Chart(document.getElementById('c-iv'), {
   type: 'bar',
-  data: {
-    labels: ['Antibiotics','Continuous infusions','Steroids','Other','Anticoagulation','TPN / parenteral nutrition','Chemotherapy','Opioids','Insulin','Blood transfusion'],
-    datasets: [{ data: [pct(20), pct(15), pct(15), pct(14), pct(10), pct(8), pct(6), pct(6), pct(6), pct(3)], backgroundColor: TEAL, borderRadius: 3 }]
-  },
+  data: { labels: ['Antibiotics','Steroids','Continuous infusions','Other','Anticoagulation','Parenteral nutrition','Insulin','Opioids','Chemotherapy','Blood transfusion'], datasets: [{ data: [pct(25),pct(16),pct(16),pct(14),pct(11),pct(9),pct(7),pct(8),pct(6),pct(3)], backgroundColor: TEAL, borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// Other interventions
+ 
 new Chart(document.getElementById('c-int'), {
   type: 'bar',
-  data: {
-    labels: ['Wound care','Supplemental oxygen','Nasogastric feeding','Airway treatments','Tracheostomy / vent mgmt','Other'],
-    datasets: [{ data: [pct(18), pct(15), pct(14), pct(13), pct(10), pct(9)], backgroundColor: TEAL, borderRadius: 3 }]
-  },
+  data: { labels: ['Wound care','Supplemental oxygen','Nasogastric feeding','Airway treatments','Tracheostomy / vent mgmt','Other'], datasets: [{ data: [pct(21),pct(17),pct(16),pct(15),pct(11),pct(11)], backgroundColor: TEAL, borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// POC
+ 
 new Chart(document.getElementById('c-poc'), {
   type: 'bar',
-  data: {
-    labels: ['Blood collection','Blood testing','Other','Ultrasound','X-ray'],
-    datasets: [{ data: [pct(19), pct(11), pct(5), pct(4), pct(2)], backgroundColor: PURPLE, borderRadius: 3 }]
-  },
+  data: { labels: ['Blood collection','Blood testing','Other','Ultrasound','X-ray'], datasets: [{ data: [pct(22),pct(13),pct(6),pct(4),pct(2)], backgroundColor: PURPLE, borderRadius: 3 }] },
   options: hBarOpts(100)
 });
-
-// Tech adoption (stacked)
+ 
 new Chart(document.getElementById('c-tech'), {
   type: 'bar',
-  data: {
-    labels: ['Overnight response','EMR','Remote patient monitoring'],
-    datasets: [
-      { label: 'Yes', data: [80, 70, 40], backgroundColor: TEAL, borderRadius: 0 },
-      { label: 'No',  data: [20, 30, 60], backgroundColor: GRAY_L, borderRadius: 0 }
-    ]
-  },
+  data: { labels: ['Overnight response','EMR','Remote patient monitoring'], datasets: [
+    { label: 'Yes', data: [68,76,44], backgroundColor: TEAL, borderRadius: 0 },
+    { label: 'No',  data: [32,24,56], backgroundColor: GRAY_L, borderRadius: 0 }
+  ] },
   options: stackedOpts()
 });
-
-// RPM types
+ 
 new Chart(document.getElementById('c-rpm'), {
   type: 'bar',
-  data: {
-    labels: ['Intermittent pulse ox','Intermittent heart rate','Weight','Intake / output','Other','Blood pressure','Continuous pulse ox','Continuous heart rate'],
-    datasets: [{ data: [8, 8, 4, 4, 3, 2, 1, 1], backgroundColor: BLUE, borderRadius: 3 }]
-  },
+  data: { labels: ['Intermittent pulse ox','Intermittent heart rate','Intermittent resp rate','Weight','Intake / output','Blood pressure','Other','Continuous pulse ox','Continuous heart rate','Continuous resp rate'], datasets: [{ data: [10,10,5,5,4,3,3,2,2,1], backgroundColor: BLUE, borderRadius: 3 }] },
   options: {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: { callbacks: { label: ctx => `${ctx.raw} of 8 programs` } }
-    },
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.raw} of 11 programs` } } },
     scales: {
-      x: { max: 8, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, stepSize: 2 } },
+      x: { max: 11, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: GRAY, font: { size: 11 }, stepSize: 2 } },
       y: { grid: { display: false }, ticks: { color: '#444441', font: { size: 11 } } }
     }
   }
 });
-
-// Communication
+ 
 new Chart(document.getElementById('c-comm'), {
   type: 'bar',
-  data: {
-    labels: ['Phone','Video / telemedicine','Text / SMS','Patient portal','Other'],
-    datasets: [{ data: [pct(20), pct(18), pct(16), pct(3), pct(1)], backgroundColor: PURPLE, borderRadius: 3 }]
-  },
+  data: { labels: ['Phone','Video / telemedicine','Text / SMS','Patient portal','Other'], datasets: [{ data: [pct(25),pct(22),pct(20),pct(3),pct(1)], backgroundColor: PURPLE, borderRadius: 3 }] },
   options: hBarOpts(100)
 });
 </script>
